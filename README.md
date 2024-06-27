@@ -1,6 +1,6 @@
 # Error.sol
 
-Solidity Error Handling Contract
+# Solidity Error Handling Contract
 
 This Solidity contract shows how to use error handling: require, revert, and assert.
 
