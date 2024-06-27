@@ -43,3 +43,39 @@ contract error{
     }
 
 }
+```
+
+## Usage
+
+Deploy the contract to an Ethereum-compatible blockchain and call the functions as needed to see the error handling in action.
+
+### Example
+
+```javascript
+const ErrorHandlingContract = await error.deployed();
+
+// Test requirecheck
+try {
+    await ErrorHandlingContract.requirecheck(11);
+} catch (error) {
+    console.error(error.message); // "No is greater than 9"
+}
+
+// Test revertcheck
+try {
+    await ErrorHandlingContract.revertcheck(10);
+} catch (error) {
+    console.error(error.message); // "j is greater than 9"
+}
+
+// Test assertcheck
+try {
+    await ErrorHandlingContract.assertcheck();
+} catch (error) {
+    console.error(error.message); // assertion error
+}
+```
+
+## License
+
+This project is licensed under the MIT License.
