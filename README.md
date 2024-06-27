@@ -1,53 +1,45 @@
-# Error.sol
+# Error Handling Contract
 
-# Solidity Error Handling Contract
+This Solidity contract demonstrates basic error handling mechanisms using `require`, `revert`, and `assert`.
 
-This Solidity contract shows how to use error handling: require, revert, and assert.
+## Contract Overview
 
-# Contract Overview
+The contract includes three primary functions to illustrate different error handling techniques:
+- `requirecheck(uint i)`: Uses the `require` statement.
+- `revertcheck(uint j)`: Uses the `revert` statement.
+- `assertcheck()`: Uses the `assert` statement.
 
-The contract error has three functions that use different error handling methods:
-requirecheck(uint i)
-revertcheck(uint j)
-assertcheck()
+## Contract Code
 
-# Functions
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
 
-requirecheck(uint i)
-This function checks if i is less than or equal to 10. If i is greater than 10, it shows an error message "No is greater than 9".
+contract error{
 
+    function requirecheck(uint i) public pure returns (uint){
 
-revertcheck(uint j)
-This function checks if j is less than 10. If j is 10 or more, it shows an error message "j is greater then 9".
+        require(i <= 10, "No is greater than 9");
+        
+        return i;
 
-function revertcheck(uint j) public pure returns (uint) {
-    if (j >= 10) {
-        revert("j is greater then 9");
     }
-    return j;
+
+    function revertcheck(uint j) public pure returns (uint){
+
+        if(j >= 10){
+            revert("j is greater than 9");
+        }
+
+        return j;
+
+    }
+
+    uint public k = 121;
+    function assertcheck() public view{
+        
+        assert(k <= 10);
+
+    }
+
 }
-assertcheck()
-This function checks if k is less than or equal to 10. k is set to 121, so calling this function will cause an error.
-
-uint public k = 121;
-
-function assertcheck() public view {
-    assert(k <= 10);
-}
-
-# How to Use
-
-Deploy the contract using a Solidity environment.
-Call requirecheck(uint i) with a value to see the require statement.
-Call revertcheck(uint j) with a value to see the revert statement.
-Call assertcheck() to see the assert statement with the initial value of k.
-
-# License
-
-This project is licensed under the MIT License.
-
-
-
-
-
-
