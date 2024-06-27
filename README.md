@@ -4,14 +4,14 @@
 
 This Solidity contract shows how to use error handling: require, revert, and assert.
 
-Contract Overview
+# Contract Overview
 
 The contract error has three functions that use different error handling methods:
 requirecheck(uint i)
 revertcheck(uint j)
 assertcheck()
 
-Functions
+# Functions
 
 requirecheck(uint i)
 This function checks if i is less than or equal to 10. If i is greater than 10, it shows an error message "No is greater than 9".
@@ -35,14 +35,14 @@ function assertcheck() public view {
     assert(k <= 10);
 }
 
-How to Use
+# How to Use
 
 Deploy the contract using a Solidity environment.
 Call requirecheck(uint i) with a value to see the require statement.
 Call revertcheck(uint j) with a value to see the revert statement.
 Call assertcheck() to see the assert statement with the initial value of k.
 
-License
+# License
 
 This project is licensed under the MIT License.
 
